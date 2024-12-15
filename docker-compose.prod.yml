@@ -13,7 +13,8 @@ services:
       - front_network
   app:
     image: alonecat/photo_content_front:latest
-
+    ports:
+      - "4173:4173"
     volumes:
       - app_data:/var/www/html
     networks:
