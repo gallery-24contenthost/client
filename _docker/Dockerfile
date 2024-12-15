@@ -39,6 +39,7 @@ RUN rm -rf build
 
 EXPOSE 4173
 
+
 # Запускаем приложение Vite в режиме preview
 CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
 
