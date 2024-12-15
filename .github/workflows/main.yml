@@ -32,7 +32,7 @@ jobs:
 
       - name: Build and push Docker image for prod
         run: |
-          docker build -f _docker/Dockerfile -t alonecat/photo_content_front:latest .
+          docker build --build-arg VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }} -f _docker/Dockerfile -t alonecat/photo_content_front:latest .
           docker push alonecat/photo_content_front:latest
   deploy:
     runs-on: ["self-hosted", "vps-frontend"]
@@ -44,11 +44,11 @@ jobs:
       - name: Deploy to vps
         env:
           NODE_ENV: ${{ secrets.NODE_ENV }}
-          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
+          #VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
 
         run: |
           echo "NODE_ENV=${NODE_ENV}"
-          echo "VITE_API_BASE_URL=${VITE_API_BASE_URL}"
+          #echo "VITE_API_BASE_URL=${VITE_API_BASE_URL}"
 
           docker-compose -f docker-compose.prod.yml down --volumes --remove-orphans
           sleep 5
