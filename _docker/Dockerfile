@@ -35,3 +35,7 @@ RUN npm install --omit=dev
 
 RUN rm -rf build
 
+EXPOSE 4173
+
+# Запускаем приложение Vite в режиме preview
+CMD ["npm", "run", "preview"]
