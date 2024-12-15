@@ -33,6 +33,8 @@ COPY --from=build-stage /build/dist/ dist/
 
 RUN npm install --omit=dev
 
+RUN npm install -g vite
+
 RUN rm -rf build
 
 EXPOSE 4173
