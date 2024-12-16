@@ -47,6 +47,9 @@ jobs:
           
           echo "Pulling latest Docker image..."
           docker pull alonecat/photo_content_front:latest
+        
+          echo "Removing unused Docker images..."
+          docker image prune -f
 
           docker-compose -f docker-compose.prod.yml down --volumes --remove-orphans
           sleep 5
