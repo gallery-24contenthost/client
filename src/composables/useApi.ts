@@ -3,10 +3,17 @@ import { useRouter } from 'vue-router';
 
 const useApi = () => {
 
-    console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+  // const baseURL = import.meta.env.VITE_BASE_URL || "__VITE_BASE_URL__"
+
+    const baseURL = "/api"
+
+    console.log("baseUrl",  baseURL);
     const api: AxiosInstance = axios.create({
-        baseURL: import.meta.env.VITE_API_BASE_URL,
+        baseURL,
     });
+
+    console.log("api on runtime ",  api, baseURL);
+
 
     api.defaults.withCredentials = true;
     api.defaults.withXSRFToken = true;

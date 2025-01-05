@@ -53,20 +53,20 @@ const logout = async () => {
       <!-- Только для авторизованных -->
       <template v-else>
         <div class="text-gray-900 font-semibold flex space-x-2 items-center">
-          <span class="fas fa-user-circle text-blue-500"></span>
-          <span class="text-gray-500">Logged in as:</span>
+          <span class="fas fa-user-circle text-blue-800"></span>
+          <span class="text-gray-800">Logged in as:</span>
           <span> {{ user?.name }}</span>
         </div>
 
         <div class="flex space-x-2 items-center">
           <router-link
               :to="{ name: 'account' }"
-              class="text-blue-500 hover:underline">
+              class="text-blue-800 hover:underline">
             Account
           </router-link>
           <!-- Кнопка выхода -->
           <button
-              class="text-blue-500 hover:underline"
+              class="text-blue-800 hover:underline"
               @click="logout">
             Logout
           </button>
