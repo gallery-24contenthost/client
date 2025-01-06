@@ -1,7 +1,7 @@
 name: client
 
 services:
-  client:
+  app-client:
     build:
       context: .
       dockerfile: .deploy/Dockerfile
