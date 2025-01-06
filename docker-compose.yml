@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: .deploy/Dockerfile
-
+    restart: unless-stopped
     networks:
       -  content_host_network
     ports:
