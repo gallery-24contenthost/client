@@ -9,7 +9,7 @@ services:
     networks:
       -  content_host_network
     ports:
-      - "8080:8080"
+      - "3000:3000"
     environment:
       NODE_ENV: ${NODE_ENV}
       VITE_BASE_URL: ${VITE_BASE_URL}
