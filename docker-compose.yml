@@ -19,6 +19,7 @@ services:
       - "traefik.http.routers.client-app-client.entrypoints=websecure"
       - "traefik.http.routers.client-app-client.tls.certresolver=letsencrypt"
       - "traefik.http.services.client-app-client.loadbalancer.server.port=3000"
+      - "traefik.http.routers.client-app-client.middlewares=redirect-to-https"
 
 
 networks:
