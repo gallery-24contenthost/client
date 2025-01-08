@@ -3,9 +3,9 @@ import { useRouter } from 'vue-router';
 
 const useApi = () => {
 
-  // const baseURL = import.meta.env.VITE_BASE_URL || "__VITE_BASE_URL__"
+     const baseURL = import.meta.env.VITE_BASE_URL || "__VITE_BASE_URL__"
 
-    const baseURL = "/api"
+    //const baseURL = "/api"
 
     console.log("baseUrl",  baseURL);
     const api: AxiosInstance = axios.create({

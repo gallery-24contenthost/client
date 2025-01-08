@@ -15,11 +15,11 @@ FROM nginx:stable-alpine
 
 COPY --from=build /dist /usr/share/nginx/html
 COPY  .deploy/nginx.conf /etc/nginx/conf.d/default.conf
-#COPY .deploy/entrypoint.sh /entrypoint.sh
+COPY .deploy/entrypoint.sh /entrypoint.sh
 
-#RUN chmod +x /entrypoint.sh
-#ENTRYPOINT ["/entrypoint.sh"]
-CMD ["nginx", "-g", "daemon off;"]
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+#CMD ["nginx", "-g", "daemon off;"]
 
 
 #CMD ["cat", "/etc/nginx/conf.d/default.conf"]
