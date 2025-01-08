@@ -27,5 +27,6 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t alonecat/client:latest .
+          docker build -f .deploy/Dockerfile -t alonecat/client:latest .
           docker push alonecat/client:latest
+
